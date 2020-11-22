@@ -190,12 +190,7 @@ public class Reflections {
 
     //
     protected void scan() {
-        if (configuration.getUrls() == null || configuration.getUrls().isEmpty()) {
-            if (log != null) {
-                log.warn("given scan urls are empty. set urls in the configuration");
-            }
-            return;
-        }
+        if (configuration.getUrls() == null || configuration.getUrls().isEmpty()) {return;}
 
         if (log != null && log.isTraceEnabled()) {
             log.trace("going to scan these urls: {}", configuration.getUrls());
